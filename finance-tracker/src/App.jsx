@@ -1,37 +1,29 @@
 // MAIN REACT COMPONENT FOR DEFINING STRUCTURE AND USER INTERFACE LOGIC
 
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
+import Budget from './components/Budget';
+import Remaining from './components/Remaining';
+import ExpenseTotal from './components/ExpenseTotal';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className='container'>
+        <h1 className='mt-3'>My Budget Planner</h1>
+        <div className='row mt-3'>
+            <div className='col-sm'>
+                <Budget />
+            </div>
+            <div className='col-sm'>
+                <Remaining />
+            </div>
+            <div className='col-sm'>
+                <ExpenseTotal />
+            </div>
+        </div>
+    </div>
+);
+};
 
 export default App
