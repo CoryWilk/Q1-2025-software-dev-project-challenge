@@ -2,6 +2,11 @@ import { createContext, useReducer } from "react";
 
 const AppReducer = (state, action) => {
     switch(action.type) {
+        case 'SET_BUDGET':
+            return {
+                ...state,
+                budget: action.payload,
+            };
         case 'ADD_EXPENSE':
             return {
                 ...state,
